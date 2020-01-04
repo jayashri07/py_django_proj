@@ -1,0 +1,71 @@
+<!-- base.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/base.css'%}">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/home.css'%}">
+
+    <style>
+
+    	
+    	div {
+    		background-color: #333;
+            width: 400px;
+            border: 200px lightgrey;
+            padding: 20px;
+            margin: 0;
+
+        }
+
+        ul {
+        	list-style-type: none;
+            margin: 0;
+            padding: 25px;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #111;
+        }
+
+
+
+    </style>
+
+</head> 
+<body>
+	<ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <div class="wrapper">
+    	<div class="right">
+        <div class="container">
+            <h1>{% block head %}{% endblock %}</h1>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
